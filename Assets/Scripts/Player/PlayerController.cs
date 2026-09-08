@@ -19,8 +19,6 @@ public class PlayerController : MonoBehaviour
     private InputAction jumpInput;
     private bool jumping = false;
 
-    private InputAction grappleInput;
-
     private float currentMoveSpeed = 0f;
     private Vector3 moveDirection = Vector3.zero;
     private float lookAngle = 0f;
@@ -35,10 +33,8 @@ public class PlayerController : MonoBehaviour
         jumpInput = InputSystem.actions.FindAction("Jump");
         jumpInput.started += Jumping;
 
-        grappleInput = InputSystem.actions.FindAction("Grapple");
-
         Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        Cursor.visible = true;
 
         currentMoveSpeed = MoveSpeed;
     }
